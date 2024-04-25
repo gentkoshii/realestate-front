@@ -10,21 +10,22 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [dateOfBirth, setDateOfBirth] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
+  const payload = {
+    username: username,
+    password: password,
+    confirmPassword: confirmPassword,
+    email: email,
+    phoneNumber: phoneNumber,
+  }
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       // Send POST request to backend endpoint
-      const response = await axios.post("/signup", {
-        username,
-        password,
-        email,
-        dateOfBirth,
-        phoneNumber,
-      });
+      const response = await axios.post("/signup", payload
+      );
       console.log("Sign up successful:", response.data);
       // Handle successful sign-up, such as redirecting to login page
     } catch (error) {
@@ -62,11 +63,6 @@ function SignUp() {
             placeholder="Enter your email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="date"
-            value={dateOfBirth}
-            onChange={(e) => setDateOfBirth(e.target.value)}
           />
           <input
             type="tel"

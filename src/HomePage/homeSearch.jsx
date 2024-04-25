@@ -60,7 +60,7 @@ function HomeSearch() {
           value={formData.Amenities}
           onChange={handleChange}
           placeholder="amenities"
-          id="amenities"
+          id="Amenities"
         />
         <button type="submit">
           <img src="./public/Icons/search-icon.png" alt="Search Icon" />

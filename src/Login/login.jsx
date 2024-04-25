@@ -12,8 +12,7 @@ function Login() {
 
   const payload = {
     username: username,
-    password: password
-
+    password: password,
   }
 
   // Function to handle form submission
@@ -21,7 +20,7 @@ function Login() {
     e.preventDefault();
     try {
       // Send POST request to backend endpoint
-      const response = 
+      const response = await axios.post("/login", payload )
       console.log("Login successful:", response.data);
     } catch (error) {
       console.error("Login failed:", error);
@@ -40,7 +39,8 @@ function Login() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <inputnp
+          
+          <input
             type="password"
             placeholder="Password"
             value={password}
