@@ -2,6 +2,14 @@ import React from "react";
 import './newPost.scss';
 import Navbar from "../Components/navbar";
 
+
+
+
+function addEstate(e) {
+  e.preventDefault()
+  console.log('e', e)
+}
+
 function NewPost() {
   return (
     <div className="newPost">
@@ -70,7 +78,7 @@ function NewPost() {
               <label htmlFor="photos">Photos</label>
               <input id="photos" name="photos" type="file" accept="image/*" multiple />
             </div>
-            <button className="sendButton">Add</button>
+            <button onClick={addEstate} className="sendButton">Add</button>
           </form>
         </div>
       </div>

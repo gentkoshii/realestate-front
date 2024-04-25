@@ -9,15 +9,19 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+
+  const payload = {
+    username: username,
+    password: password
+
+  }
+
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       // Send POST request to backend endpoint
-      const response = await axios.post("/login", {
-        username,
-        password,
-      });
+      const response = 
       console.log("Login successful:", response.data);
     } catch (error) {
       console.error("Login failed:", error);
