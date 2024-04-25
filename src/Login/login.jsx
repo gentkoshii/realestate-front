@@ -40,7 +40,7 @@ function Login() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <input
+          <inputnp
             type="password"
             placeholder="Password"
             value={password}
