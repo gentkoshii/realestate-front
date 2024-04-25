@@ -1,0 +1,76 @@
+.homeSearch{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+    background-color: #EAE4D8;
+
+    p{
+        font-size: 40px;
+        font-family: "Baskervville", serif;
+    }
+    .just{
+        padding-left: 180px;
+        margin-top: -30px;
+        margin-bottom: 30px;
+        font-size: 50px;
+        letter-spacing: 15px;
+        font-family: "Birthstone Bounce", cursive;
+    } 
+
+    form{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+        border: 2px solid #4C695F;
+        border-radius: 50px 50px 50px 50px;
+        font-size: 17px;
+        
+        #minPrice{
+            border-left:1px solid #4C695F;
+            border-radius: 0;
+            }
+        #maxPrice{
+            border-left:1px solid #4C695F;
+            border-radius: 0;
+            }
+        #amenities{
+            width: 200px;
+            border-left:1px solid #4C695F;
+            border-radius: 0;
+            }
+        :focus{
+            outline: none;
+        }  
+    }   
+    input{
+        height: 40px;
+        padding-left: 10px;
+        border: none;
+        border-radius: 50px 0px 0px 50px;
+        font-size: 20px;
+        background-color: #F4F3EF;
+        color: #4C695F;      
+        
+    }
+    button{
+        height: 40px;
+        width: 40px;
+        border: none;
+        border-left: 2px solid #4C695F;
+        border-radius: 0px 50px 50px 0px;
+        background-color: #F4F3EF;
+        img{
+            align-items: center;
+            padding-top: 3px;
+            height: 24px;
+            width: 24px;
+        }
+        :active{
+            height: 28px;
+            width: 28px;
+        }
+    }
+}

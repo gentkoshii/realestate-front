@@ -1,0 +1,66 @@
+@import "./src/responsive.scss";   
+   .NeedHelpSection{
+        display: flex;
+        flex-direction: column;      
+        height: 65vh;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        background-color: #F4F3EF;
+        color: #4C695F;
+
+        .Text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 80vw;
+            @include sm{
+                width: 75vw;
+            }
+        }
+        
+        @include md{
+            padding-top: 30px;
+            padding-bottom: 30px;
+            height: 100%;
+            h1{
+                font-size: 24px;
+            }
+            
+        }    
+        @include sm{
+                height: 100%;
+                h1{
+                    font-size: 22px;
+                }
+                h3{
+                    font-size: 16px;
+                }
+                
+            }
+        .Options{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            row-gap: 50px;
+            gap: 20px;
+            font-size: 22px;
+            font-family: "Alata", sans-serif;
+            text-align: center;
+            img{
+                border: 2px solid #4C695F;
+                border-radius: 15px;
+            }
+            :hover{
+                img{
+                    scale: 1.03;
+                }
+            }
+            
+            @include md{
+                grid-template-columns: 1fr;
+                font-size: 18px;
+            }
+        }
+    }
