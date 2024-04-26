@@ -12,7 +12,6 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [dateOfBirth, setDateOfBirth] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
   // Function to handle form submission
@@ -20,14 +19,14 @@ function SignUp() {
     e.preventDefault();
     try {
       // Send POST request to backend endpoint
-      const response = await axios.post("/signup", {
+      const response = await axios.post("http://localhost:5199/api/User/register", {
         username,
         password,
         email,
-        dateOfBirth,
+        confirmPassword,
         phoneNumber,
       });
-      if(response.success) {
+      if(response.status == 200) {
         navigate("/login")
       } else {
         console.error("error ")
@@ -69,11 +68,6 @@ function SignUp() {
             placeholder="Enter your email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="date"
-            value={dateOfBirth}
-            onChange={(e) => setDateOfBirth(e.target.value)}
           />
           <input
             type="tel"
