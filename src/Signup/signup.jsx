@@ -9,23 +9,22 @@ function SignUp() {
   const navigate = useNavigate()
   // State variables for sign-up form fields
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [dateOfBirth, setDateOfBirth] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       // Send POST request to backend endpoint
-      const response = await axios.post("/signup", {
+      const response = await axios.post("https://localhost:7172/api/User/register", {
         username,
-        password,
         email,
-        dateOfBirth,
         phoneNumber,
+        password,
+        confirmPassword
       });
       if(response.success) {
         navigate("/login")
@@ -53,6 +52,18 @@ function SignUp() {
             onChange={(e) => setUsername(e.target.value)}
           />
           <input
+            type="email"
+            placeholder="Enter your email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="tel"
+            placeholder="Enter your phone number"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          />
+          <input
             type="password"
             placeholder="Enter your password"
             value={password}
@@ -63,23 +74,6 @@ function SignUp() {
             placeholder="Confirm your password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-          <input
-            type="email"
-            placeholder="Enter your email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="date"
-            value={dateOfBirth}
-            onChange={(e) => setDateOfBirth(e.target.value)}
-          />
-          <input
-            type="tel"
-            placeholder="Enter your phone number"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
           />
           <input type="submit" id="Submit" value="Sign Up" />
         </form>
