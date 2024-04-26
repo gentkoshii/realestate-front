@@ -1,12 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import Navbar from "../Components/navbar";
 import HomeFooter from "../Components/homeFooter";
 import "./properties.scss";
+import Card from "../Components/card";
 
-function properties() {
+function Properties() {
+
+    const [properties, setProperties] = useState([]);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchProperties = async () => {
+            try {
+                // Get the token from local storage
+                const token = localStorage.getItem('token');
+
+                console.log('token', token)
+
+                // Make the API call to fetch properties
+                const response = await axios.get('https://localhost:7172/api/Properties', {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+
+                // Handle the response data
+                setProperties(response.data);
+            } catch (error) {
+                console.error('Error fetching properties:', error);
+                setError(error.message);
+            }
+        };
+
+        fetchProperties();
+    }, []);
+
     return (
         <div className="properties">
-            <Navbar></Navbar>
+            <Navbar />
             <div className="filter">
                 <select name="Sort" id="Sort">
                     <option value="Exclusive">SORT: EXCLUSIVE (DEFAULT)</option>
@@ -15,82 +47,13 @@ function properties() {
                 </select>
             </div>
             <div className="grid">
-                <div className="Property">
-                    <a href="">
-                        <img src="./House img\House1.jpg" alt="House Image" />
-                        <h2>Location</h2>
-                        <h4>Price$$$</h4>
-                        <p>Descripton: <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </a>
-                </div>
-                <div className="Property">
-                    <a href="">
-                        <img src="./House img\House2.jpg" alt="House Image" />
-                        <h2>Location</h2>
-                        <h4>Price$$$</h4>
-                        <p>Descripton: <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </a>
-                </div>
-                <div className="Property">
-                    <a href="">
-                        <img src="./House img\House3.jpg" alt="House Image" />
-                        <h2>Location</h2>
-                        <h4>Price$$$</h4>
-                        <p>Descripton: <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </a>
-                </div>
-                <div className="Property">
-                    <a href="">
-                        <img src="./House img\House4.jpg" alt="House Image" />
-                        <h2>Location</h2>
-                        <h4>Price$$$</h4>
-                        <p>Descripton: <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </a>
-                </div>
-                <div className="Property">
-                    <a href="">
-                        <img src="./House img\House5.jpg" alt="House Image" />
-                        <h2>Location</h2>
-                        <h4>Price$$$</h4>
-                        <p>Descripton: <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </a>
-                </div>
-                <div className="Property">
-                    <a href="">
-                        <img src="./House img\House6.jpg" alt="House Image" />
-                        <h2>Location</h2>
-                        <h4>Price$$$</h4>
-                        <p>Descripton: <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </a>
-                </div>
-                <div className="Property">
-                    <a href="">
-                        <img src="./House img\House7.jpg" alt="House Image" />
-                        <h2>Location</h2>
-                        <h4>Price$$$</h4>
-                        <p>Descripton: <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </a>
-                </div>
-                <div className="Property">
-                    <a href="">
-                        <img src="./House img\House8.jpg" alt="House Image" />
-                        <h2>Location</h2>
-                        <h4>Price$$$</h4>
-                        <p>Descripton: <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </a>
-                </div>
-                <div className="Property">
-                    <a href="">
-                        <img src="./House img\House9.jpg" alt="House Image" />
-                        <h2>Location</h2>
-                        <h4>Price$$$</h4>
-                        <p>Descripton: <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </a>
-                </div>
-
+                {properties.map(property => (
+                    <Card key={property.id} property={property} />
+                ))}
             </div>
-            <HomeFooter></HomeFooter>
+            <HomeFooter />
         </div>
-    )
+    );
 }
-export default properties
+
+export default Properties;

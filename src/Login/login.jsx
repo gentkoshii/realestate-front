@@ -12,19 +12,23 @@ function Login() {
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    let token
+    e.preventDefault();
     try {
-        const response = await axios.post("https://localhost:7172/api/User/login", { email: username, password });
-      if (response.success) {
-        token = response.token
+      const response = await axios.post("https://localhost:7172/api/User/login", { email: username, password });
+      console.log('response', response.data);
+
+      // Check if the response status is 200, indicating success
+      if (response.status === 200) {
+        const token = response.data.token; // Extracting token from response data
+        localStorage.setItem("token", token);
+        console.log('token', token);
       }
-      localStorage.setItem("token", token)
-      console.log(token)
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
+
+
 
   return (
     <div className="login">
