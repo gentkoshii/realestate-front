@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./homeProducts.scss";
-
+import axios from "axios"
 function HomeProducts() {
     const [products, setProducts] = useState([
         {
@@ -11,22 +11,30 @@ function HomeProducts() {
         }
     ]);
 
+    useEffect(() => {
+     axios.post("https://localhost:7172/api/Property/Filtered?status=ALL")
+        .then(res => {
+            if(res.success) {
+                setProducts(res.data)
+            } else {
+                console.error("error");
+            }
+        })
+
+    },[])
+
     const [sortBy, setSortBy] = useState("Exclusive");
     const [currentPage, setCurrentPage] = useState(1);
-    const productsPerPage = 6; // Change this number as needed
+    const productsPerPage = 6; 
 
-    // Function to handle sorting
     const handleSortChange = (e) => {
         setSortBy(e.target.value);
-        // Add sorting logic here based on the selected value
     };
 
-    // Function to handle pagination
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
 
-    // Calculate the index of the first and last product on the current page
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);

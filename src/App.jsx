@@ -20,7 +20,7 @@ function App() {
             <HomeProducts />
             <HomeHelp />
             <HomeFooter />
-            <Admin />
+            {/* <Admin /> */}
             {/* <NewPost /> */}
             {/* <SinglePage /> */}
         </div>

@@ -3,8 +3,10 @@ import Navbar from "../Components/navbar";
 import HomeFooter from "../Components/homeFooter";
 import "./signup.scss";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
+  const navigate = useNavigate()
   // State variables for sign-up form fields
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -25,6 +27,11 @@ function SignUp() {
         dateOfBirth,
         phoneNumber,
       });
+      if(response.success) {
+        navigate("/login")
+      } else {
+        console.error("error ")
+      }
       console.log("Sign up successful:", response.data);
       // Handle successful sign-up, such as redirecting to login page
     } catch (error) {
