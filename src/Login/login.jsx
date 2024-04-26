@@ -6,25 +6,23 @@ import axios from "axios";
 
 function Login() {
   // State variables for username and password
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("zeri@example.com");
+  const [password, setPassword] = useState("Password123!");
 
-
-  const payload = {
-    username: username,
-    password: password
-
-  }
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    let token
     try {
-      // Send POST request to backend endpoint
-      const response = 
-      console.log("Login successful:", response.data);
+      const response = await axios.post("https://localhost:7172/api/User/login", { email: username, password });
+      if (response.success) {
+        token = response.token
+      }
+      localStorage.setItem("token", token)
+      console.log(token)
     } catch (error) {
-      console.error("Login failed:", error);
+      console.log(error)
     }
   };
 
@@ -36,13 +34,13 @@ function Login() {
           <h2>Log Into Real Estate</h2>
           <input
             type="text"
-            placeholder="Username"
+            placeholder="zeri@example.com"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Password123!"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

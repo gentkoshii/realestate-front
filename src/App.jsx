@@ -7,6 +7,7 @@ import Admin from "./AdminPage/admin";
 import SinglePage from "./SinglePost/singlePost";
 import "./layout.scss";
 import NewPost from "./NewPost/newPost";
+//import Card from "./Components/card";
 
 
 
@@ -14,16 +15,16 @@ import NewPost from "./NewPost/newPost";
 function App() {
     return (
         <div className="layout">
-            <Navbar/>
-            <HomeSearch/>
-            <HomeProducts/>
-            <HomeHelp/>
-            <HomeFooter/>
-            <Admin/>
-            <NewPost/>
-            <SinglePage/>
+            <Navbar />
+            <HomeSearch />
+            <HomeProducts />
+            <HomeHelp />
+            <HomeFooter />
+            <Admin />
+            {/* <NewPost /> */}
+            {/* <SinglePage /> */}
         </div>
     )
-  }
-  
-  export default App
+}
+
+export default App
