@@ -41,12 +41,6 @@ function HomeProducts() {
 
     return (
         <div className="homeProducts">
-            <select name="Sort" id="Sort" onChange={handleSortChange} value={sortBy}>
-                <option value="Exclusive">SORT: EXCLUSIVE (DEFAULT)</option>
-                <option value="Affordable">SORT: AFFORDABLE</option>
-                <option value="Cheap">SORT: CHEAP</option>
-            </select>
-
             <div className="homeProductsP">
                 {currentProducts.map((p, index) => (
                     <div className="Product" key={index}>
