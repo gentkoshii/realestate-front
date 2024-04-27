@@ -11,29 +11,28 @@
     @include md{
         height: 100%;
     }
-    select{
-        height: 20px;
-        width: 250px;
-        background-color: #F4F3EF;
-        border: none;
-        margin: 30px 0px 30px 6vw;
-        font-size: 16px;
-        font-family: "Alata", sans-serif;
-    }
     .homeProductsP{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        row-gap: 50px;
-        @include lg{
-            grid-template-columns: 1fr 1fr;
-        }
-        @include md{
-            grid-template-columns: 1fr ;
-        }
+
+        flex-direction: column;
+        padding-top: 50px;
+
         .Product{
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
+            display: flex;
+            padding-left: 100px;
+            padding-right: 100px;
+            gap: 100px;
+            @include lg{
+                grid-template-columns: 1fr 1fr;
+            }
+            @include md{
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
+            }
+            @include sm{
+                grid-template-columns: 1fr;
+            }
                 img{
                     height: 300px;
                     width: 100%;
