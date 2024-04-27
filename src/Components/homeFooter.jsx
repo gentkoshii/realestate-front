@@ -22,11 +22,8 @@ function homeFooter(){
             </div>
             <div className="footerRight">
                 <h2>Write to one of our agents</h2>
-                <p>Email address:</p>
-                <form action="">
-                    <input type="text" placeholder="Your email address" />
-                    <input type="submit" id="Submit" value="Submit"/>
-                </form>
+                <p id="callus">Call Us:</p>
+                <p>+383 999 999</p>
             </div>
         </div>
     )

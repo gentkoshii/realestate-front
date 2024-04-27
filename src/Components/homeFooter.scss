@@ -1,7 +1,8 @@
 @import "./src/responsive.scss";
 
 .homeFooter {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     background-color: #EAE4D8;
     height: 25vh;
 
@@ -15,7 +16,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 25%;
 
         h2 {
             font-size: 22px;
@@ -24,66 +24,45 @@
             padding-left: 30px;
 
         }
-
         .footerLeftLogo {
             display: flex;
             align-items: center;
             padding-top: 20px;
             padding-left: 30px;
-
         }
-
         h4 {
             padding-left: 30px;
-
         }
-
         img {
             height: 60px;
             width: 60px;
         }
-
-        @include lg {
-            width: 30%;
-        }
-
         @include md {
-            width: 30%;
             padding-left: 20px;
-
             p {
                 font-size: 14px;
             }
-
             h2 {
                 font-size: 16px;
             }
-
             h4 {
                 font-size: 14px;
             }
-
             img {
                 display: none;
             }
         }
-
         @include sm {
-            width: 20%;
             padding-left: 10px;
-
             p {
                 font-size: 12px;
             }
-
             h2 {
                 font-size: 14px;
             }
-
             h4 {
                 font-size: 12px;
             }
-
             img {
                 display: none;
             }
@@ -94,9 +73,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 50%;
+        text-align: center;
         padding-top: 20px;
-
         img {
             height: 40px;
             width: 40px;
@@ -107,23 +85,13 @@
         #copyRights {
             padding-top: 80px;
         }
-
-        @include lg {
-            width: 33%;
-        }
-
         @include md {
-            width: 30%;
-            padding-left: 10px;
-
             p {
                 font-size: 14px;
             }
-
             #copyRights {
                 font-size: 14px;
             }
-
             img {
                 height: 30px;
                 width: 30px;
@@ -132,17 +100,12 @@
         }
 
         @include sm {
-            width: 30%;
-            padding-left: 20px;
-
             p {
                 font-size: 12px;
             }
-
             #copyRights {
                 font-size: 12px;
             }
-
             img {
                 height: 20px;
                 width: 20px;
@@ -154,7 +117,6 @@
     .footerRight {
         display: flex;
         flex-direction: column;
-        width: 25%;
         padding-top: 20px;
 
 
@@ -166,121 +128,29 @@
         p {
             padding-top: 20px;
         }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            padding-top: 20px;
-
-            :focus {
-                outline: none;
-                padding-left: 5px;
-            }
-
-            input {
-                background-color: #D9D9D9;
-                border: none;
-                height: 40px;
-                width: 300px;
-                padding-left: 5px;
-            }
-
-            #Submit {
-                height: 40px;
-                width: 150px;
-                background-color: #3B554C;
-                border: 2px solid #4C695F;
-                border-radius: 50px 50px 50px 50px;
-                color: white;
-                font-size: 16px;
-                font-family: "Alata", sans-serif;
-
-                &:hover {
-                    transition: all 0.2s ease;
-                    font-size: 17px;
-
-                    &:active {
-                        text-decoration: underline;
-                    }
-                }
-            }
-        }
-
-        @include lg {
-            width: 30%;
+        #callus{
+            padding-top: 30px;
+            font-weight: bolder;
         }
 
         @include md {
-            width: 40%;
-            padding-left: 20px;
-
             p {
                 font-size: 14px;
             }
-
             h2 {
                 font-size: 16px;
-            }
-
-            form {
-                input {
-                    height: 30px;
-                    width: 250px;
-                }
-
-                #Submit {
-                    height: 30px;
-                    width: 100px;
-                    font-size: 12px;
-
-                    &:hover {
-                        transition: all 0.2s ease;
-                        font-size: 13px;
-
-                        &:active {
-                            text-decoration: underline;
-                        }
-                    }
-                }
             }
         }
 
         @include sm {
-            width: 40%;
             padding-left: 10px;
-
+            
             p {
                 font-size: 10px;
             }
 
             h2 {
                 font-size: 12px;
-            }
-
-            h4 {
-                font-size: 12px;
-            }
-
-            form {
-                input {
-                    height: 25px;
-                    width: 175px;
-                }
-
-                #Submit {
-                    height: 25px;
-                    width: 100px;
-
-                    &:hover {
-                        transition: all 0.2s ease;
-                        font-size: 13px;
-
-                        &:active {
-                            text-decoration: underline;
-                        }
-                    }
-                }
             }
         }
     }
