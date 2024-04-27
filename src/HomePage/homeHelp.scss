@@ -23,9 +23,10 @@
             height: 400px;
             width: 600px;
         }
-        p{
+        p{  
+            font-size: 18px;
             font-family: "Alata", sans-serif;
-            padding-bottom: 20px;
+            padding-bottom: 30px;
         }
         a{
         }
@@ -44,9 +45,30 @@
                 &:hover{
                     transition: all 0.3s ease;
                     font-size: 17px;
+                    @include md{
+                        font-size: 16px;
+                    }
+                    @include sm{
+                        font-size: 15px;
+                    }
                      &:active{
                         text-decoration: underline;
                     }
+                }
+                @include lg{
+
+                }
+                @include md{
+                        height: 35px;
+                        width: 90px;
+                        font-size: 15px;
+                        margin-top: 40px;
+                }
+                @include sm{
+                        height: 30px;
+                        width: 90px;
+                        font-size: 14px;
+                        margin-top: 40px;
                 }
         }
         @include md {
@@ -57,24 +79,11 @@
                 height: 350px;
                 width: 500px;
             }
-           
         }
         @include sm {
-            h2{
-                font-size: 14px;
-            }
-            p{
-                font-size: 12px;
-            }
             img{
                 height: 300px;
                 width: 400px;
-            }
-            button{
-                height: 30px;
-                width: 90px;
-                font-size: 14px;
-                margin-top: 20px;
             }
         }
     }
