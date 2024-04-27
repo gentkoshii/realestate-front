@@ -1,3 +1,5 @@
+@import "./src/responsive.scss";
+
 .homeSearch{
     display: flex;
     flex-direction: column;
@@ -9,6 +11,12 @@
     p{
         font-size: 40px;
         font-family: "Baskervville", serif;
+        @include lg{
+            font-size: 35px;
+        }
+        @include md{
+            font-size: 28px; 
+        }
     }
     .just{
         padding-left: 180px;
@@ -17,8 +25,17 @@
         font-size: 50px;
         letter-spacing: 15px;
         font-family: "Birthstone Bounce", cursive;
+        @include lg{
+            font-size: 40px;
+            margin-top:-25px;
+            padding-right: 10px;
+        }
+        @include md{
+            margin-top:-20px;
+            font-size: 30px;
+            padding-right: 40px;
+        }
     } 
-
     form{
         display: flex;
         justify-content: space-between;
@@ -27,7 +44,27 @@
         border: 2px solid #4C695F;
         border-radius: 50px 50px 50px 50px;
         font-size: 17px;
-        
+        @include lg{
+            height: 30px;
+            font-size: 15px;
+        }
+        @include md{
+            height: 25px;
+            font-size: 13px;
+        }
+        @include sm{
+            height: 20px;
+            font-size: 11px;
+        }
+        #location{
+            width: 200px;
+            @include md{
+                width: 100px;
+                }
+            @include sm{
+                width: 80px;
+            }
+            }
         #minPrice{
             border-left:1px solid #4C695F;
             border-radius: 0;
@@ -40,6 +77,12 @@
             width: 200px;
             border-left:1px solid #4C695F;
             border-radius: 0;
+            @include md{
+                width: 100px;
+                }
+            @include sm{
+                width: 80px;
+            }
             }
         :focus{
             outline: none;
@@ -53,7 +96,18 @@
         font-size: 20px;
         background-color: #F4F3EF;
         color: #4C695F;      
-        
+        @include lg{
+            height: 30px;
+            font-size: 15px;
+        }
+        @include md{
+            height: 25px;
+            font-size: 13px;
+        }
+        @include sm{
+            height: 20px;
+            font-size: 11px;
+        }
     }
     button{
         height: 40px;
@@ -67,10 +121,35 @@
             padding-top: 3px;
             height: 24px;
             width: 24px;
+            @include lg{
+                height: 22px;
+                width: 22px;
+                }
+            @include md{
+                height: 16px;
+                width: 16px;
+                }
         }
         :active{
             height: 28px;
             width: 28px;
+            @include lg{
+                height: 25px;
+                width: 25px;
+                }
+            @include md{
+                height: 18px;
+                width: 18px;
+                }
+        }
+        @include lg{
+            height: 30px;
+        }
+        @include md{
+            height: 25px;
+        }
+        @include sm{
+            height: 20px;
         }
     }
 }

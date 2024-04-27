@@ -33,6 +33,7 @@ function HomeSearch() {
           value={formData.location}
           onChange={handleChange}
           placeholder="City Location"
+          id="location"
         />
         <input
           type="number"
