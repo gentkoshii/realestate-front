@@ -8,6 +8,7 @@ import NeedHelp from './Help/help.jsx'
 import HomeOYO from './Help/homeOYO.jsx'
 import BuyingYH from './Help/buyingYH.jsx'
 import BeyondC from './Help/beyondC.jsx'
+import SinglePost from './SinglePost/singlePost.jsx'
 
 
 import {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
     path: "beyondC",
     element: <BeyondC />,
   },
+   {
+     path: "property/:id",
+     element: <SinglePost />,
+ },
 ]);
 
 
