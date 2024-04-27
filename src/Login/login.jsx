@@ -6,8 +6,8 @@ import axios from "axios";
 
 function Login() {
   // State variables for username and password
-  const [username, setUsername] = useState("zeri@example.com");
-  const [password, setPassword] = useState("Password123!");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
 
   const handleSubmit = async (e) => {

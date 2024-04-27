@@ -83,6 +83,7 @@ return (
       <div className="single-post">
         {property && (
           <div className="property-details">
+                            <img src={property.propertyImage} alt="House Image" />
             <h1>{property.title}</h1>
             <p>{property.description}</p>
             <div>

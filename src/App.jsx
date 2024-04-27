@@ -21,7 +21,6 @@ function App() {
             <HomeHelp />
             <HomeFooter />
             {/* <Admin /> */}
-            {/* <NewPost /> */}
             {/* <SinglePage /> */}
         </div>
     )

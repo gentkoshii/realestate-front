@@ -1,35 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import "./homeProducts.scss";
-import axios from "axios"
+import axios from "axios";
+
 function HomeProducts() {
-    const [products, setProducts] = useState([
-        {
-            image: "./public/House img/House8.jpg",
-            title: "Location",
-            price: "24.99",
-            description: "Hola"
-        }
-    ]);
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
-     axios.post("https://localhost:7172/api/Property/Filtered?status=ALL")
-        .then(res => {
-            if(res.success) {
-                setProducts(res.data)
-            } else {
-                console.error("error");
-            }
-        })
+      const fetchData = async () => {
+        try {
+          const response = await axios.get('https://localhost:7172/api/Properties/GetFiltered?status=ALL');
+          // Assuming response.data is an array of objects as you described
+          setProducts(response.data.map(item => ({
+            id: item.id,
+            propertyImage: item.propertyImage ?? '', // Assuming propertyImages is an array of image URLs
+            title: item.title,
+            price: item.price,
+            description: item.description
+          })));
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+  
+      fetchData();
+    }, []);
 
-    },[])
+    
 
-    const [sortBy, setSortBy] = useState("Exclusive");
     const [currentPage, setCurrentPage] = useState(1);
     const productsPerPage = 6; 
 
-    const handleSortChange = (e) => {
-        setSortBy(e.target.value);
-    };
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -44,8 +44,8 @@ function HomeProducts() {
             <div className="homeProductsP">
                 {currentProducts.map((p, index) => (
                     <div className="Product" key={index}>
-                        <a href="">
-                            <img src={p.image} alt="House Image" />
+                            <a href={`http://localhost:5173/property/${p.id}`}>
+                            <img src={p.propertyImage} alt="House Image" />
                             <h2>{p.title}</h2>
                             <h4>{p.price}</h4>
                             <p>Description: <br /> {p.description}</p>
