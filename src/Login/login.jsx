@@ -10,18 +10,18 @@ function Login() {
   const [password, setPassword] = useState("Password123!");
 
 
-  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post("https://localhost:7172/api/User/login", { email: username, password });
       console.log('response', response.data);
 
-      // Check if the response status is 200, indicating success
       if (response.status === 200) {
-        const token = response.data.token; // Extracting token from response data
+        const token = response.data.token; // Extracting token
         localStorage.setItem("token", token);
         console.log('token', token);
+        window.location.href = "/"; 
+
       }
     } catch (error) {
       console.log(error);

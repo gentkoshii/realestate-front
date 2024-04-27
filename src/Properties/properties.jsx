@@ -47,9 +47,11 @@ function Properties() {
                 </select>
             </div>
             <div className="grid">
-                {properties.map(property => (
-                    <Card key={property.id} property={property} />
-                ))}
+                {
+                    properties.map(property => (
+                        <Card key={property.id} property={property} />
+                    ))
+                }
             </div>
             <HomeFooter />
         </div>
