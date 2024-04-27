@@ -20,7 +20,7 @@ function Navbar() {
         <nav>
             <div className="navLeft">
                 <img src="./public\Icons\logo.png" alt="Logo" />
-                <p>Real Estate</p>
+                <a href="/" id="logoLink">Real Estate</a>
             </div>
             <div className="navRight">
                 <div className="navPages">

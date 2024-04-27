@@ -59,7 +59,7 @@ function HomeSearch() {
           name="amenities"
           value={formData.Amenities}
           onChange={handleChange}
-          placeholder="amenities"
+          placeholder="Amenities"
           id="amenities"
         />
         <button type="submit">
