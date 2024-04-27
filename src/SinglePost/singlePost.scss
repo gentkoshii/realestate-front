@@ -1,0 +1,63 @@
+.single-post {
+    .property-details {
+        /* Styles for the property details container */
+        /* Assuming a width and margin for the container */
+        width: 80%;
+        margin: 0 auto;
+
+        h1 {
+            /* Styles for the property title */
+            /* Example styles, adjust as needed */
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            /* Styles for property details paragraphs */
+            /* Example styles, adjust as needed */
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .form-group {
+            /* Styles for form input groups */
+            /* Example styles, adjust as needed */
+            margin-bottom: 15px;
+
+            label {
+                /* Styles for form labels */
+                /* Example styles, adjust as needed */
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            input[type="email"],
+            textarea {
+                /* Styles for input and textarea */
+                /* Example styles, adjust as needed */
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+        }
+
+        .btn-send {
+            /* Styles for the submit button */
+            /* Example styles, adjust as needed */
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+
+            &:hover {
+                background-color: #0056b3;
+            }
+        }
+    }
+}
