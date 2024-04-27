@@ -83,9 +83,9 @@ return (
       <div className="single-post">
         {property && (
           <div className="property-details">
-                            <img src={property.propertyImage} alt="House Image" />
+            
+            <div>
             <h1>{property.title}</h1>
-            <p>{property.description}</p>
             <div>
               <p>{property.address}, {property.city}, {property.country}, {property.zipCode}</p>
             </div>
@@ -99,7 +99,11 @@ return (
             <div>
               <p>Status: {property.status}</p>
               <p>Type: {property.type}</p>
+              <p>Description: <br />{property.description}</p>
+
             </div>
+            </div>
+            <img src={property.propertyImage} alt="House Image" />
             {/* Form for email and message */}
             <form onSubmit={handleSubmit}>
               <div className="form-group">
