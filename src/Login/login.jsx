@@ -20,7 +20,7 @@ function Login() {
         const token = response.data.token; // Extracting token
         localStorage.setItem("token", token);
         console.log('token', token);
-        window.location.href = "/"; 
+        window.location.href = "/";
 
       }
     } catch (error) {
@@ -38,13 +38,13 @@ function Login() {
           <h2>Log Into Real Estate</h2>
           <input
             type="text"
-            placeholder="zeri@example.com"
+            placeholder="name@example.com"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <input
             type="password"
-            placeholder="Password123!"
+            placeholder="********"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
