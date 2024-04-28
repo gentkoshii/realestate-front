@@ -9,6 +9,10 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/login"; // Redirect to login page after logout
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,15 +24,12 @@ function Login() {
         const token = response.data.token; // Extracting token
         localStorage.setItem("token", token);
         console.log('token', token);
-        window.location.href = "/";
-
+        window.location.href = "/"; // Redirect to homepage after successful login
       }
     } catch (error) {
       console.log(error);
     }
   };
-
-
 
   return (
     <div className="login">
@@ -44,7 +45,7 @@ function Login() {
           />
           <input
             type="password"
-            placeholder="********"
+            placeholder="************"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
