@@ -52,6 +52,8 @@ function Properties() {
             <div className="filter">
                 <button onClick={() => handleButtonClick("buy")} className={activeButton === "buy" ? "active" : ""}>Buy</button>
                 <button onClick={() => handleButtonClick("rent")} className={activeButton === "rent" ? "active" : ""}>Rent</button>
+                <button onClick={() => handleButtonClick("ALL")} className={activeButton === "ALL" ? "active" : ""}>All</button>
+
             </div>
             <div className="grid">
                 {
