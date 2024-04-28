@@ -1,58 +1,56 @@
 @import "./src/responsive.scss";
 
-.homeProducts{
+.homeProducts {
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow: hidden;
     background-color: #F4F3EF;
-    @include lg{
+    font-family: "Alata", sans-serif;
+
+    @include lg {
         height: 100%;
     }
-    @include md{
+
+    @include md {
         height: 100%;
     }
-    .homeProductsP{
+
+    .homeProductsP {
         display: grid;
+        width: 100%;
         grid-template-columns: 1fr 1fr 1fr;
-        flex-direction: column;
+        row-gap: 50px; 
         padding-top: 50px;
 
-        .Product{
-            display: flex;
-            padding-left: 100px;
-            padding-right: 100px;
-            padding-top: 50px;
+        @include lg {
+            grid-template-columns: 1fr 1fr;
+        }
 
-            gap: 100px;
-            @include lg{
-                grid-template-columns: 1fr 1fr;
+        @include md {
+            grid-template-columns: 1fr;
+        }
+
+        .Product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                height: 300px; 
+                width: 375px;
+                object-fit: cover;
+                border: 1px solid black;
+                border-radius: 20px;
             }
-            @include md{
-                grid-template-columns: 1fr 1fr;
-                gap: 50px;
+
+            h2, h4, p {
+                margin: 0; 
             }
-            @include sm{
-                grid-template-columns: 1fr;
-            }
-                img{
-                    height: 300px;
-                    width: 100%;
-                    object-fit: cover;
-                    border: 1px solid black;
-                    border-radius: 20px;
-                }
-                h2{
-                    font-family: "Alata", sans-serif;
-                }
-                h4{
-                    font-family: "Alata", sans-serif;
-                }
-                p{
-                    font-family: "Alata", sans-serif;
-                }
-        }  
+        }
     }
-    .pageSelector{
+
+    .pageSelector {
         display: flex;
         justify-content: center;
         padding-top: 50px;
