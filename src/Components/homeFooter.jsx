@@ -1,11 +1,11 @@
 import "./homeFooter.scss"
 
-function homeFooter(){
-    return(
+function homeFooter() {
+    return (
         <div className="homeFooter">
             <div className="footerLeft">
                 <div className="footerLeftLogo">
-                    <img src="./public/Icons\logo.png" alt="Logo" />
+                    <img src="/Icons\logo.png" alt="Logo" />
                     <p>Real Estate</p>
                 </div>
                 <h4>Making your choices easier</h4>
@@ -14,9 +14,9 @@ function homeFooter(){
             <div className="footerCenter">
                 <p>Contact us</p>
                 <div className="footerIcons">
-                <a href="https://www.facebook.com/" ><img className="icons" src="./public/Icons\facebook.png" alt="Facebook" /></a>
-                <a href="https://www.instagram.com/" ><img src="./public/Icons\instagram.png" alt="Instagram" /></a>
-                <a href="https://www.twitter.com/" ><img src="./public/Icons\twitter.png" alt="Twitter" /></a>
+                    <a href="https://www.facebook.com/" ><img className="icons" src="/Icons\facebook.png" alt="Facebook" /></a>
+                    <a href="https://www.instagram.com/" ><img src="/Icons\instagram.png" alt="Instagram" /></a>
+                    <a href="https://www.twitter.com/" ><img src="/Icons\twitter.png" alt="Twitter" /></a>
                 </div>
                 <p id="copyRights">Copyright 2024, All rights reserved.</p>
             </div>

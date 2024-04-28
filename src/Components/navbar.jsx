@@ -22,7 +22,7 @@ function Navbar() {
     return (
         <nav>
             <div className="navLeft">
-                <img src="./public/Icons/logo.png" alt="Logo" />
+                <img src="/Icons/logo.png" alt="Logo" />
                 <Link to="/" id="logoLink">Real Estate</Link>
             </div>
             <div className="navRight">
@@ -34,7 +34,7 @@ function Navbar() {
                     <Link to="/signup">Sign Up</Link>
                 </div>
                 <div className="navbarIcon">
-                    <img src="./public/Icons/menu2.png" alt="Hamburger-Menu" onClick={() => setOpen((prev) => !prev)} />
+                    <img src="/Icons/menu2.png" alt="Hamburger-Menu" onClick={() => setOpen((prev) => !prev)} />
                 </div>
                 <div className={open ? "navbarMenu active" : "navbarMenu"}>
                     <Link to="/prop">Properties</Link>
