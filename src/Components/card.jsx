@@ -6,7 +6,7 @@ const Card = ({ property }) => {
   return (
     <Link to={`/property/${property.id}`} className="card-link">
       <section className="card">
-        {/* <img src={property.propertyImages[0]} alt={property.title} className="card-img" /> */}
+        <img src={property?.propertyImage ? property.propertyImage : "/house"} alt={property.title} className="card-img" />
         <div className="card-details">
           <h3 className="card-title">{property.title}</h3>
           <p className="card-description">{property.description}</p>

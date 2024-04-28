@@ -7,6 +7,7 @@ import Admin from "./AdminPage/admin";
 import SinglePage from "./SinglePost/singlePost";
 import "./layout.scss";
 import NewPost from "./NewPost/newPost";
+import { useState } from "react";
 //import Card from "./Components/card";
 
 
@@ -16,7 +17,6 @@ function App() {
     return (
         <div className="layout">
             <Navbar />
-            <HomeSearch />
             <HomeProducts />
             <HomeHelp />
             <HomeFooter />
