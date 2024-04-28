@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import "./navbar.scss"
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./navbar.scss";
 import axios from "axios";
 
 function Navbar() {
@@ -8,39 +9,41 @@ function Navbar() {
     const fetchSmth = async () => {
         try {
             const response = await axios.get("http://localhost:5199/api/amenities");
-            console.log(response)
+            console.log(response);
         } catch (error) {
-            console.log(error)
-
+            console.log(error);
         }
-    }
+    };
 
-    useEffect(() => { fetchSmth() }, [])
+    useEffect(() => {
+        fetchSmth();
+    }, []);
+
     return (
         <nav>
             <div className="navLeft">
-                <img src="./public\Icons\logo.png" alt="Logo" />
-                <a href="/" id="logoLink">Real Estate</a>
+                <img src="./public/Icons/logo.png" alt="Logo" />
+                <Link to="/" id="logoLink">Real Estate</Link>
             </div>
             <div className="navRight">
                 <div className="navPages">
-                    <a href="prop">Properties</a>
+                    <Link to="/prop">Properties</Link>
                 </div>
                 <div className="navAuthorization">
-                    <a href="login">Login</a>
-                    <a href="signup">Sign Up</a>
+                    <Link to="/login">Login</Link>
+                    <Link to="/signup">Sign Up</Link>
                 </div>
                 <div className="navbarIcon">
                     <img src="./public/Icons/menu2.png" alt="Hamburger-Menu" onClick={() => setOpen((prev) => !prev)} />
                 </div>
                 <div className={open ? "navbarMenu active" : "navbarMenu"}>
-                    <a href="prop">Properties</a>
-                    <a href="login">Login</a>
-                    <a href="signup">Sign Up</a>
+                    <Link to="/prop">Properties</Link>
+                    <Link to="/login">Login</Link>
+                    <Link to="/signup">Sign Up</Link>
                 </div>
             </div>
         </nav>
-    )
+    );
 }
 
 export default Navbar;
