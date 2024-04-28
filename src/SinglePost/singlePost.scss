@@ -4,7 +4,7 @@
     height: 65vh;
     background-color: #F4F3EF;
     font-family: "Alata", sans-serif;
-
+    padding-bottom: 50px;
 
     .property-details {
         /* Styles for the property details container */
@@ -14,7 +14,8 @@
         width: 80%;
         margin: 0 auto;
         padding-top: 50px;
-        img{
+
+        img {
             height: 300px;
             width: 400px;
         }
