@@ -5,6 +5,7 @@
     flex-direction: column;
     height: 100%;
     background-color: #F4F3EF;
+    font-family: "Alata",sans-serif;
 
     @include lg {
         height: 100%;
@@ -13,9 +14,25 @@
     @include md {
         height: 100%;
     }
+    
+    .filter{
+        display: flex;
+        padding-top: 30px;
+        padding-left: 50px;
+        height: 100%;
+        gap: 10px;
+        button{
+            height: 30px;
+            width: 50px;
+            border: 2px solid #4C695F;
+            border-radius: 50px;
+            background-color: #F4F3EF;
+        }
+    }
 
     .grid {
         display: grid;
+        height: 100%;
         grid-template-columns: 1fr 1fr 1fr;
         row-gap: 50px;
         margin-top: 50px;
@@ -30,11 +47,6 @@
         }
     }
 
-    .Property {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-
         img {
             height: 200px;
             width: 100%;
@@ -47,7 +59,6 @@
         p {
             font-family: "Alata", sans-serif;
         }
-
-
     }
-}
+    
+    

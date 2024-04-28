@@ -76,7 +76,7 @@
         #amenities{
             width: 200px;
             border-left:1px solid #4C695F;
-            border-radius: 0;
+            border-radius: 0px 50px 50px 0px;
             @include md{
                 width: 100px;
                 }

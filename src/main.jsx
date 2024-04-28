@@ -29,6 +29,7 @@ const router = createBrowserRouter([
   {
     path: "prop",
     element: <Prop />,
+    exact: true
   },
   {
     path: "signup",
@@ -50,15 +51,15 @@ const router = createBrowserRouter([
     path: "beyondC",
     element: <BeyondC />,
   },
-   {
-     path: "property/:id",
-     element: <SinglePost />,
- },
+  {
+    path: "property/:id",
+    element: <SinglePost />,
+  },
 ]);
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />    
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )

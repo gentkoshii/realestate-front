@@ -63,9 +63,6 @@ function HomeSearch() {
           placeholder="Amenities"
           id="amenities"
         />
-        <button type="submit">
-          <img src="./public/Icons/search-icon.png" alt="Search Icon" />
-        </button>
       </form>
     </div>
   );

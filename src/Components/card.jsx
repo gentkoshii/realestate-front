@@ -25,12 +25,7 @@ const Card = ({ property }) => {
           </div>
           <div className="card-footer">
             <div className="card-status">{property.status}</div>
-            <div className="card-type">{property.type}</div>
-            <div className="card-actions">
-              <button className="btn-add-to-cart">
-                {/* <BsFillBagFill className="bag-icon" /> Add to Cart */}
-              </button>
-            </div>
+            
           </div>
         </div>
       </section>

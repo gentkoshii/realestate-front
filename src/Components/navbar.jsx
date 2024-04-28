@@ -24,12 +24,6 @@ function Navbar() {
             </div>
             <div className="navRight">
                 <div className="navPages">
-                    <form>
-                        <button>
-                            <img src="./public\Icons\search-icon.png" alt="search" />
-                        </button>
-                        <input type="text" name="Search" placeholder="Search" />
-                    </form>
                     <a href="prop">Properties</a>
                 </div>
                 <div className="navAuthorization">
