@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../Components/navbar";
+import { Link } from "react-router-dom";
 import HomeFooter from "../Components/homeFooter";
 import "./login.scss";
 import axios from "axios";
@@ -50,7 +51,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
           <input type="submit" id="loginButton" value="Log In" />
-          <a href="./signup">Don't Have An Account ?</a>
+          <Link to="/signup">Don't Have An Account ?</Link>
         </form>
       </div>
       <HomeFooter />

@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../Components/navbar";
 import HomeFooter from "../Components/homeFooter";
+import { Link } from "react-router-dom";
 import "./help.scss"
 
 
@@ -14,22 +15,22 @@ function NeedHelp(){
                 </div>
                 <div className="Options">
                     <div>
-                        <a href="./homeOYO">
+                        <Link to="/homeOYO">
                             <img src="/Img/home-of-your-own.jpg" alt="" />
                             <p>A Home Of Your Own</p>
-                        </a>
+                        </Link>
                     </div>
                     <div>
-                        <a href="./buyingYH">
+                        <Link to="/buyingYH">
                             <img src="/Img/buying-your-home.jpg" alt="" />                  
                             <p>Buying Your Home</p>
-                        </a>
+                        </Link>
                     </div>
                     <div>
-                        <a href="./beyondC">
+                        <Link to="/beyondC">
                             <img src="/Img/beyond-closing.jpg" alt="" />
                             <p>Beyond Closing</p>
-                        </a>
+                        </Link>
                     </div>            
                 </div>
             </div>

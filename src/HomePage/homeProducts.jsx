@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import "./homeProducts.scss";
 import axios from "axios";
 
@@ -145,7 +146,7 @@ function HomeProducts() {
         <div className="homeProductsP">
           {currentProducts.map((p, index) => (
             <div className="Product" key={index}>
-              <a href={`./property/${p.id}`}>
+              <Link to={`/property/${p.id}`}>
                 <img src={p.propertyImage} alt="House Image" />
                 <h2>{p.title}</h2>
                 <h4>{p.price}</h4>
@@ -155,7 +156,7 @@ function HomeProducts() {
                 <p>Country:  {p.location.country}</p>
 
 
-              </a>
+              </Link>
             </div>
           ))}
         </div>
