@@ -55,7 +55,7 @@ const SinglePost = () => {
       };
 
       // Make the API call to post the message
-      const response = await axios.post('https://localhost:7172/api/contact/inquiries', requestData, {
+      const response = await axios.post('https://api-lazbjamuma-ez.a.run.app/api/contact/inquiries', requestData, {
         headers: {
           Authorization: `Bearer ${token}`
         }
