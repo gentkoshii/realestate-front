@@ -17,7 +17,7 @@ function HomeProducts() {
   useEffect(() => {
     const fetchData = async (formData) => {
       try {
-        const response = await axios.get(`https://localhost:7172/api/search`, {
+        const response = await axios.get(`https://api-lazbjamuma-ez.a.run.app/api/search`, {
           params: {
             minPrice: formData.minPrice,
             maxPrice: formData.maxPrice,

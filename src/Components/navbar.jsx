@@ -8,7 +8,7 @@ function Navbar() {
 
     const fetchSmth = async () => {
         try {
-            const response = await axios.get("http://localhost:5199/api/amenities");
+            const response = await axios.get("https://api-lazbjamuma-ez.a.run.app/api/amenities");
             console.log(response);
         } catch (error) {
             console.log(error);

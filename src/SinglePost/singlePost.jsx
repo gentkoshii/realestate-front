@@ -18,7 +18,7 @@ const SinglePost = () => {
         const token = localStorage.getItem('token');
 
         // Make the API call to fetch the single property
-        const response = await axios.get(`https://localhost:7172/api/Properties/${id}`, {
+        const response = await axios.get(`https://api-lazbjamuma-ez.a.run.app/api/Properties/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

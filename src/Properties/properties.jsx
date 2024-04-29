@@ -26,7 +26,7 @@ function Properties() {
             }
 
             // Make the API call to fetch filtered properties
-            const response = await axios.get(`https://localhost:7172/api/Properties/GetFiltered`, {
+            const response = await axios.get(`https://api-lazbjamuma-ez.a.run.app/api/Properties/GetFiltered`, {
                 params: { status: status },
                 headers: {
                     Authorization: `Bearer ${token}`

@@ -19,7 +19,7 @@ function SignUp() {
     e.preventDefault();
     try {
       // Send POST request to backend endpoint
-      const response = await axios.post("http://localhost:5199/api/User/register", {
+      const response = await axios.post("https://api-lazbjamuma-ez.a.run.app/api/User/register", {
         username,
         email,
         phoneNumber,
