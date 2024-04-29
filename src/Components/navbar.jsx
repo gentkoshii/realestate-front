@@ -4,6 +4,7 @@ import "./navbar.scss";
 
 function Navbar() {
     const [open, setOpen] = useState(false);
+    const [isLoggedIn,setIsLoggedIn] = useState(false);
 
     const fetchSmth = async () => {
         try {
