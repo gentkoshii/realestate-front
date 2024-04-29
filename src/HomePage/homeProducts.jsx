@@ -145,7 +145,7 @@ function HomeProducts() {
         <div className="homeProductsP">
           {currentProducts.map((p, index) => (
             <div className="Product" key={index}>
-              <a href={`https://api-lazbjamuma-ez.a.run.app/property/${p.id}`}>
+              <a href={`./property/${p.id}`}>
                 <img src={p.propertyImage} alt="House Image" />
                 <h2>{p.title}</h2>
                 <h4>{p.price}</h4>

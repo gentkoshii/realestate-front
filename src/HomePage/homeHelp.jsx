@@ -11,7 +11,7 @@ function homeHelp(){
                 <p>
                 Buying a home is a significant and exciting decision. This section provides professional real estate advice and helpful home buying tips.
                 </p>
-                <a href="needhelp" id="NeedHelpButton" >
+                <a href="./needhelp" id="NeedHelpButton" >
                     Need Help?
                 </a>
             </div>

@@ -14,19 +14,19 @@ function NeedHelp(){
                 </div>
                 <div className="Options">
                     <div>
-                        <a href="homeOYO">
+                        <a href="./homeOYO">
                             <img src="/Img/home-of-your-own.jpg" alt="" />
                             <p>A Home Of Your Own</p>
                         </a>
                     </div>
                     <div>
-                        <a href="buyingYH">
+                        <a href="./buyingYH">
                             <img src="/Img/buying-your-home.jpg" alt="" />                  
                             <p>Buying Your Home</p>
                         </a>
                     </div>
                     <div>
-                        <a href="beyondC">
+                        <a href="./beyondC">
                             <img src="/Img/beyond-closing.jpg" alt="" />
                             <p>Beyond Closing</p>
                         </a>
